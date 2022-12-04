@@ -13,7 +13,7 @@ float ry;
 float xCohete,yCohete,xFuego,yFuego;
 float velocidadCohete;
 public void setup() {
-  size(640, 360, P3D);
+  size(640, 960, P3D);
   //variables X y Y para definir la posicion 
   //del cohete,  el fuego y su respetiva velocidad
    xCohete = 400;
