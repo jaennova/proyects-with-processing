@@ -1,43 +1,48 @@
 /**
- * Load and Display an OBJ Shape. 
+ * Tercera ley de newton: Principio de accion y reaccion
  * 
- * The loadShape() command is used to read simple SVG (Scalable Vector Graphics)
- * files and OBJ (Object) files into a Processing sketch. This example loads an
- * OBJ file of a rocket and displays it to the screen. 
+ *La tercera ley de Newton establece que para cada acción hay una reacción igual y opuesta.
+ *Esta ley se aplica en el despegue de un cohete cuando los motores del cohete generan 
+ *una fuerza que empuja al cohete hacia arriba.
  */
+ 
+//declaracion de varables
 PImage img;
 PShape rocket;
 float ry;
-float x,y,x1,y1;
-float vel;
+float xCohete,yCohete,xFuego,yFuego;
+float velocidadCohete;
 public void setup() {
   size(640, 360, P3D);
-   x = 400;
-   y = -20;
-   x1 = 400;
-   y1 = -20;
-   vel=-10;
+  //variables X y Y para definir la posicion 
+  //del cohete,  el fuego y su respetiva velocidad
+   xCohete = 400;
+   yCohete = -20;
+   xFuego = 400;
+   yFuego = -20;
+   velocidadCohete=-10;
+   //carga la figura del cohete y la imagen del fuego
   rocket = loadShape("rocket.obj");
   img = loadImage("fire.png");
 }
 public void draw() {
+  //fondo
   background(0);
   lights();
-  
-  translate(width/2, height/2 + x, y);
+  //movimiento y ajuste de posicion del cohete
+  translate(width/2, height/2 + xCohete, yCohete);
   rotateZ(PI);
   rotateY(ry);
   shape(rocket);  
-  //image
-  //image(img, x1-450, y1-50,100,100);
-  image(img, x1-450, y1-50,100,100);
+  //posicion y tamano del fuego
+  image(img, xFuego-450, yFuego-50,100,100);
   
-  //avanza
+  //condicion para que el cohete despeje
 if (keyPressed) {
     if (key == 'l' || key == 'L') {
        ry += 2;
-       y+=vel;
-       x+=vel;
+       yCohete+=velocidadCohete;
+       xCohete+=velocidadCohete;
     } //fin if 2
 } //fin if
   
