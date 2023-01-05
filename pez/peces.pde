@@ -2,7 +2,7 @@ void peces(){
 
   
 
-///////    peces
+//    peces
 
 fill(violet);
         
