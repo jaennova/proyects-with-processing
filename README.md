@@ -1,2 +1,1 @@
-# proyects-with-processing
-projects carried out for the course of graphics
+# Proyectos hechos en processing
